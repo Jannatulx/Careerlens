@@ -1,10 +1,14 @@
-# CareerLens Landing Page
+# CareerLense
 
-React + Vite.
+A React-based career guidance platform.
 
-```bash
-npm install
-npm run dev
-```
+## Features
+- Career-focused landing page
+- CV analysis and improvement
+- Skills improvement
+- Job recommendations
 
-Open the URL shown in the terminal (usually http://localhost:5173).
+## Tech Stack
+- React
+- Vite
+- CSS
