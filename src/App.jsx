@@ -7,8 +7,11 @@ import Play from './components/Play';
 import Marquee from './components/Marquee';
 import CTA from './components/CTA';
 import Foot from './components/Footer';
-
+import MySkills from './components/pages/MySkills';
 export default function App() {
+  if (window.location.pathname === '/my-skills') {
+  return <MySkills />;
+}
   return (
     <>
       <Nav />
