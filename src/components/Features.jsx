@@ -15,7 +15,7 @@ const features = [
 title:"AI CV Analyzer",
 image:cvImg,
 description:
-"Upload your CV and receive detailed feedback about your strengths, weaknesses and career readiness score."
+"Analyze your CV and get AI-powered feedback about your skills and career readiness."
 },
 
 
@@ -23,7 +23,7 @@ description:
 title:"Skill Gap Analysis",
 image:skillImg,
 description:
-"Identify missing skills for your desired career path and get personalized recommendations to improve."
+"Identify missing skills and get personalized learning recommendations."
 },
 
 
@@ -31,7 +31,7 @@ description:
 title:"Smart Opportunity Matching",
 image:matchImg,
 description:
-"Discover internships and jobs that match your skills, interests and career goals."
+"Find internships and jobs matched with your skills and goals."
 },
 
 
@@ -39,7 +39,7 @@ description:
 title:"Application Tracker",
 image:trackerImg,
 description:
-"Track applications, interviews and career progress from one organized dashboard."
+"Manage applications, interviews and career progress."
 },
 
 
@@ -47,7 +47,7 @@ description:
 title:"Career Analytics",
 image:analyticsImg,
 description:
-"Measure your growth, monitor improvements and understand your career readiness."
+"Measure improvement and track your career growth."
 }
 
 ];
@@ -64,6 +64,7 @@ return(
 
 <div className="features-heading">
 
+
 <span>
 FEATURES
 </span>
@@ -75,8 +76,7 @@ Everything You Need For Career Growth
 
 
 <p>
-Powerful tools to analyze skills, improve readiness,
-and discover the right opportunities.
+Powerful tools designed to help students build a successful career.
 </p>
 
 
@@ -86,7 +86,7 @@ and discover the right opportunities.
 
 
 
-<div className="features-wrapper">
+<div className="features-slider">
 
 
 {
@@ -94,31 +94,21 @@ and discover the right opportunities.
 features.map((item,index)=>(
 
 
-<div
+<motion.div
 
-className={`feature-row ${
-index % 2 !== 0 ? "reverse" : ""
-}`}
+className="feature-card"
 
 key={index}
 
->
-
-
-{/* IMAGE */}
-
-
-<motion.div
-
-className="feature-image"
 
 initial={{
 
 opacity:0,
 
-x:index % 2 === 0 ? -120 : 120
+x:80
 
 }}
+
 
 whileInView={{
 
@@ -128,23 +118,29 @@ x:0
 
 }}
 
+
 transition={{
 
-duration:.8,
+duration:.5,
 
-ease:"easeOut"
+delay:index*.1
 
 }}
+
 
 viewport={{
-once:true,
-amount:.3
+
+once:true
+
 }}
+
+
 
 >
 
 
-<div className="image-bg">
+<div className="feature-image">
+
 
 <img
 
@@ -154,85 +150,39 @@ alt={item.title}
 
 />
 
+
 </div>
 
 
-</motion.div>
-
-
-
-
-
-
-
-{/* TEXT */}
-
-
-<motion.div
-
-
-className="feature-content"
-
-
-initial={{
-
-opacity:0,
-
-x:index % 2 === 0 ? 120 : -120
-
-}}
-
-
-whileInView={{
-
-opacity:1,
-
-x:0
-
-}}
-
-
-transition={{
-
-duration:.8,
-
-delay:.15
-
-}}
-
-
-viewport={{
-once:true,
-amount:.3
-}}
-
-
-
->
 
 
 <h3>
+
 {item.title}
+
 </h3>
 
 
+
+
 <p>
+
 {item.description}
+
 </p>
 
 
 
+
 <button>
+
 Explore →
+
 </button>
 
 
+
 </motion.div>
-
-
-
-
-</div>
 
 
 ))

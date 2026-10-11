@@ -3,49 +3,84 @@ import { Rv } from "./ui";
 import "./How.css";
 
 
+import profileImg from "../assets/profile.png";
+import analysisImg from "../assets/analysis.png";
+import jobsImg from "../assets/jobs.png";
+import growthImg from "../assets/growth.png";
+
+
+
 const STEPS = [
 
 {
 title:"Build Your Career Profile",
-desc:"Create your personalized profile with education, skills, projects and career goals.",
+
+desc:
+"Create your personalized profile with education, skills, projects and career goals.",
+
+image:profileImg,
+
 items:[
 "Profile completed ✓",
 "Skills: React, JavaScript, MongoDB",
 "Goal: Full Stack Developer"
 ]
+
 },
+
 
 
 {
 title:"AI Career Analysis",
-desc:"Our AI analyzes your CV and identifies strengths, weaknesses and skill gaps.",
+
+desc:
+"Our AI analyzes your CV and identifies strengths, weaknesses and skill gaps.",
+
+image:analysisImg,
+
 items:[
 "Career readiness: 82%",
 "Strong: React & Problem Solving",
 "Improve: Database & Communication"
 ]
+
 },
+
 
 
 {
 title:"Smart Opportunity Matching",
-desc:"Find internships and jobs ranked according to your skills and interests.",
+
+desc:
+"Discover internships and jobs ranked according to your skills and interests.",
+
+image:jobsImg,
+
 items:[
 "Frontend Intern — 94% match",
 "MERN Developer — 87% match",
 "Junior Developer — 82% match"
 ]
+
 },
 
 
+
+
 {
-title:"Track Your Growth",
-desc:"Manage applications and monitor your career improvement.",
+title:"Track Your Career Growth",
+
+desc:
+"Manage applications and monitor your professional improvement.",
+
+image:growthImg,
+
 items:[
 "Applied → Shortlisted → Interview",
 "Interview rate: 25%",
 "Career score: 82% ↑ 8%"
 ]
+
 }
 
 ];
@@ -53,7 +88,8 @@ items:[
 
 
 
-export default function How(){
+
+export default function HowItWorks(){
 
 
 const [active,setActive]=useState(0);
@@ -62,14 +98,20 @@ const [active,setActive]=useState(0);
 
 useEffect(()=>{
 
+
 const timer=setInterval(()=>{
 
-setActive((prev)=>(prev+1)%STEPS.length);
 
-},4000);
+setActive(
+(prev)=>(prev+1)%STEPS.length
+);
 
 
-return ()=>clearInterval(timer);
+},4500);
+
+
+
+return()=>clearInterval(timer);
 
 
 },[]);
@@ -78,9 +120,17 @@ return ()=>clearInterval(timer);
 
 
 
+const step = STEPS[active];
+
+
+
 return(
 
-<section className="how-section" id="how-it-works">
+
+<section 
+className="how-section"
+id="how-it-works"
+>
 
 
 <div className="how-container">
@@ -91,19 +141,27 @@ return(
 
 
 <span className="how-tag">
+
 HOW IT WORKS
+
 </span>
 
 
+
 <h2>
+
 Your Career Journey
 Made Simple.
+
 </h2>
 
 
+
 <p>
-From profile creation to career growth,
-CareerLens helps you move towards the right opportunity.
+
+From building your profile to finding the right opportunity,
+CareerLens guides your complete career journey.
+
 </p>
 
 
@@ -113,11 +171,14 @@ CareerLens helps you move towards the right opportunity.
 
 
 
+
 <div className="how-grid">
 
 
 
-{/* LEFT SIDE */}
+
+
+{/* LEFT STEPS */}
 
 
 <div className="steps">
@@ -125,41 +186,47 @@ CareerLens helps you move towards the right opportunity.
 
 {
 
-STEPS.map((step,index)=>(
+STEPS.map((item,index)=>(
 
 
 <button
 
 key={index}
 
-className={`step-card ${
-active===index ? "active":""
-}`}
+className={
+`step-card ${
+active===index ? "active": ""
+}`
+}
 
 
 onClick={()=>setActive(index)}
+
 
 >
 
 
 <div className="step-number">
 
-{index+1}
+0{index+1}
 
 </div>
 
 
 
+
 <div>
 
+
 <h3>
-{step.title}
+{item.title}
 </h3>
 
 
 <p>
-{step.desc}
+{item.desc}
 </p>
+
 
 </div>
 
@@ -169,6 +236,7 @@ onClick={()=>setActive(index)}
 
 
 ))
+
 
 }
 
@@ -181,10 +249,33 @@ onClick={()=>setActive(index)}
 
 
 
-{/* RIGHT DASHBOARD */}
+{/* RIGHT PRODUCT PREVIEW */}
 
 
-<div className="career-preview">
+<div 
+className="career-preview"
+key={active}
+>
+
+
+
+<div className="preview-image">
+
+
+<img
+
+src={step.image}
+
+alt={step.title}
+
+/>
+
+
+</div>
+
+
+
+
 
 
 <div className="preview-top">
@@ -192,17 +283,20 @@ onClick={()=>setActive(index)}
 
 <div>
 
+
 <span>
 CAREER INSIGHT
 </span>
 
 
+
 <h3>
-{STEPS[active].title}
+{step.title}
 </h3>
 
 
 </div>
+
 
 
 
@@ -213,8 +307,8 @@ LIVE
 </div>
 
 
-</div>
 
+</div>
 
 
 
@@ -222,7 +316,7 @@ LIVE
 
 {
 
-STEPS[active].items.map((item,index)=>(
+step.items.map((item,index)=>(
 
 
 <div
@@ -250,7 +344,6 @@ key={index}
 
 
 
-
 <div className="progress-area">
 
 
@@ -259,21 +352,28 @@ Career Readiness
 </p>
 
 
+
 <div className="progress-bar">
 
-
 <span
+
 style={{
-width:`${70+active*6}%`
+
+width:`${70+(active*7)}%`
+
 }}
+
 />
 
 
 </div>
 
 
+
 <h4>
-{70+active*6}%
+
+{70+(active*7)}%
+
 </h4>
 
 
@@ -281,7 +381,11 @@ width:`${70+active*6}%`
 
 
 
+
+
+
 </div>
+
 
 
 
