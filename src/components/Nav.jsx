@@ -1,9 +1,11 @@
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Nav.css";
 
 
 export default function Navbar(){
+    const navigate = useNavigate();
 
 
 const [talentOpen,setTalentOpen]=useState(false);
@@ -234,25 +236,25 @@ Features
 <div className="nav-actions">
 
 
-<button className="signin-btn">
-
-Sign In
-
+<button
+  className="signin-btn"
+  onClick={() => navigate("/signin")}
+>
+  Sign In
 </button>
 
 
 
 
 <a
-
-href="#cta"
-
-className="signup-btn"
-
+  href="/signup"
+  className="signup-btn"
+  onClick={(e) => {
+    e.preventDefault();
+    navigate("/signup");
+  }}
 >
-
-Get Started →
-
+  Get Started →
 </a>
 
 
