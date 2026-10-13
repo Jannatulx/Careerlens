@@ -1,6 +1,5 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
@@ -13,6 +12,7 @@ import Foot from "./components/Footer";
 
 import SignIn from "./auth/pages/SignIn";
 import SignUp from "./auth/pages/SignUp";
+import Profile from "./profile/Profile";
 
 function LandingPage() {
   return (
@@ -37,6 +37,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
