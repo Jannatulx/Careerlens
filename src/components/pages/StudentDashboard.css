@@ -1,0 +1,924 @@
+
+/* CAREERLENS PREMIUM STUDENT DASHBOARD */
+/* Sidebar & Topbar remain in DashboardLayout */
+
+.cld-app .cld-main {
+  font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  max-width: 1660px;
+  padding: 32px 38px 25px;
+  color: #253a30;
+}
+
+/* HEADING */
+
+.cld-app .cld-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.cld-app .cld-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a17d;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .14em;
+}
+
+.cld-app .cld-eyebrow span {
+  width: 7px;
+  height: 7px;
+  background: #69c68f;
+  border-radius: 50%;
+}
+
+.cld-app .cld-page-heading h1 {
+  margin: 12px 0 8px;
+  font-size: clamp(25px, 3vw, 34px);
+  color: #193428;
+  font-weight: 850;
+  letter-spacing: -.055em;
+}
+
+.cld-app .cld-page-heading p {
+  margin: 0;
+  color: #86958a;
+  font-size: 12.8px;
+}
+
+.cld-app .cld-demo-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 30px;
+  background: #eef8f1;
+  border: 1px solid #dcefe4;
+  color: #35895f;
+  font-size: 10.5px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+/* PREMIUM HERO */
+
+.cld-app .cld-premium-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 242px;
+  padding: 29px 39px;
+  margin-bottom: 21px;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(
+    110deg,
+    #174b38 0%,
+    #225940 57%,
+    #307650 100%
+  );
+}
+
+.cld-app .cld-premium-hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -110px;
+  top: -160px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(114, 205, 144, .17),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.cld-app .cld-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: 58%;
+  max-width: 560px;
+}
+
+.cld-app .cld-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #a6e4c2;
+  font-weight: 850;
+  letter-spacing: .15em;
+  font-size: 10px;
+}
+
+.cld-app .cld-hero-copy h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(25px, 2.7vw, 38px);
+  font-weight: 850;
+  line-height: 1.19;
+  letter-spacing: -.045em;
+}
+
+.cld-app .cld-hero-copy h2 em {
+  font-style: normal;
+  color: #a8e7bd;
+}
+
+.cld-app .cld-hero-copy p {
+  max-width: 455px;
+  margin: 13px 0 17px;
+  color: #d0e2d8;
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+.cld-app .cld-hero-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #dbffe9;
+  font-weight: 800;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.cld-app .cld-hero-action:hover {
+  color: #fff;
+}
+
+/* HERO ART */
+
+.cld-app .cld-hero-art {
+  position: absolute;
+  right: 38px;
+  top: 0;
+  width: 420px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cld-app .cld-hero-orbit {
+  position: absolute;
+  left: calc(50% - 110px);
+  top: calc(50% - 110px);
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(181, 246, 195, .23);
+  border-radius: 50%;
+  transform: rotate(-23deg);
+}
+
+.cld-app .cld-hero-orbit-two {
+  width: 290px;
+  height: 290px;
+  left: calc(50% - 145px);
+  top: calc(50% - 145px);
+  border-style: dashed;
+  opacity: .65;
+  animation: cld-orbit-spin 35s linear infinite;
+}
+
+.cld-app .cld-hero-mark {
+  position: absolute;
+  left: calc(50% - 52px);
+  top: calc(50% - 52px);
+  width: 104px;
+  height: 104px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+  color: #d5f9df;
+  background: linear-gradient(
+    135deg,
+    rgba(141, 229, 169, .35),
+    rgba(137, 224, 185, .08)
+  );
+  border: 1px solid rgba(185, 255, 198, .35);
+  box-shadow:
+    0 0 0 20px rgba(194, 245, 212, .035),
+    0 20px 40px rgba(3, 40, 18, .2);
+  transform: rotate(-12deg);
+}
+
+.cld-app .cld-floating-skill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .97);
+  color: #294d38;
+  font-size: 11px;
+  font-weight: 850;
+  white-space: nowrap;
+  box-shadow: 0 12px 28px rgba(5, 35, 17, .15);
+  animation: cld-float 5s ease-in-out infinite;
+}
+
+.cld-app .cld-floating-skill svg,
+.cld-app .cld-floating-skill b {
+  color: #2baf7b;
+}
+
+.cld-app .cld-float-first {
+  left: 15px;
+  top: 31px;
+}
+
+.cld-app .cld-float-second {
+  right: 0;
+  bottom: 24px;
+  animation-delay: 1.2s;
+}
+
+.cld-app .cld-hero-star {
+  position: absolute;
+  left: 52px;
+  bottom: 13px;
+  color: #8bdbae;
+  font-size: 26px;
+}
+
+@keyframes cld-orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cld-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
+
+/* SHARED CARD SURFACES */
+
+.cld-app .cld-stat-card,
+.cld-app .cld-panel,
+.cld-app .cld-job-card {
+  background: #fff;
+  border: 1px solid #e6eee9;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(25, 66, 44, .035);
+}
+
+/* STATS */
+
+.cld-app .cld-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 29px;
+}
+
+.cld-app .cld-stat-card {
+  padding: 19px;
+  border-radius: 13px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.cld-app .cld-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(23, 72, 44, .07);
+}
+
+.cld-app .cld-stat-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.cld-app .cld-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.cld-app .cld-green {
+  background: #e5f7ed;
+  color: #3f9364;
+}
+
+.cld-app .cld-purple {
+  background: #f1eafe;
+  color: #7964b6;
+}
+
+.cld-app .cld-blue {
+  background: #e8f1ff;
+  color: #5479c2;
+}
+
+.cld-app .cld-orange {
+  background: #fff2e5;
+  color: #ce8c48;
+}
+
+.cld-app .cld-subtle-icon {
+  color: #a7b6ad;
+}
+
+.cld-app .cld-stat-card > p {
+  margin: 0 0 7px;
+  color: #85988a;
+  font-size: 11.5px;
+}
+
+.cld-app .cld-stat-card > strong {
+  display: block;
+  color: #193529;
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+
+.cld-app .cld-stat-card > small {
+  display: block;
+  margin-top: 8px;
+  color: #9baca0;
+  font-size: 11px;
+}
+
+/* TWO-COLUMN PANELS */
+
+.cld-app .cld-overview-grid,
+.cld-app .cld-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.cld-app .cld-panel {
+  padding: 25px;
+  min-width: 0;
+}
+
+.cld-app .cld-panel-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  color: #609475;
+}
+
+.cld-app .cld-panel-title h2 {
+  margin: 0 0 6px;
+  color: #1d382a;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+
+.cld-app .cld-panel-title p {
+  margin: 0;
+  color: #92a096;
+  font-size: 12px;
+}
+
+/* READINESS CHART */
+
+.cld-app .cld-readiness-body {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 25px;
+  align-items: center;
+  margin: 30px 0 18px;
+}
+
+.cld-app .cld-donut {
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #35a779 0 78%,
+    #e8f0eb 78% 100%
+  );
+  display: grid;
+  place-items: center;
+}
+
+.cld-app .cld-donut-inside {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cld-app .cld-donut-inside strong {
+  font-size: 32px;
+  color: #172033;
+}
+
+.cld-app .cld-donut-inside small {
+  color: #85968a;
+  font-size: 11px;
+}
+
+.cld-app .cld-mini-skill {
+  margin-bottom: 15px;
+}
+
+.cld-app .cld-mini-skill > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.cld-app .cld-mini-skill b {
+  color: #4ba276;
+}
+
+.cld-app .cld-mini-track,
+.cld-app .cld-skill-track {
+  width: 100%;
+  height: 7px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #eaf0ec;
+}
+
+.cld-app .cld-mini-track > span,
+.cld-app .cld-skill-track > div {
+  display: block;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #60b987, #a8dec0);
+  transition: width .7s ease;
+}
+
+.cld-app .cld-panel-footnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0 0;
+  color: #6d987c;
+  font-size: 11px;
+}
+
+/* DEADLINES */
+
+.cld-app .cld-deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.cld-app .cld-deadline {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #edf1ee;
+  border-radius: 13px;
+  padding: 14px;
+}
+
+.cld-app .cld-deadline-icon {
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #eaf8ee;
+  color: #4e9e70;
+}
+
+.cld-app .cld-deadline-icon.cld-urgent {
+  background: #fff1df;
+  color: #d19a3e;
+}
+
+.cld-app .cld-deadline strong,
+.cld-app .cld-deadline small {
+  display: block;
+}
+
+.cld-app .cld-deadline strong {
+  font-size: 12px;
+}
+
+.cld-app .cld-deadline small {
+  margin-top: 5px;
+  color: #94a197;
+  font-size: 11px;
+}
+
+.cld-app .cld-due-badge,
+.cld-app .cld-upcoming-badge {
+  margin-left: auto;
+  padding: 7px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cld-app .cld-due-badge {
+  background: #fff1df;
+  color: #b17d29;
+}
+
+.cld-app .cld-upcoming-badge {
+  background: #e8f6ee;
+  color: #429369;
+}
+
+/* OPPORTUNITIES */
+
+.cld-app .cld-jobs-section {
+  margin-top: 34px;
+}
+
+.cld-app .cld-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.cld-app .cld-section-eyebrow {
+  color: #64a17d;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  font-weight: 850;
+}
+
+.cld-app .cld-section-heading h2 {
+  margin: 8px 0;
+  font-size: 22px;
+  color: #1d382a;
+  letter-spacing: -.035em;
+}
+
+.cld-app .cld-section-heading p {
+  margin: 0;
+  font-size: 12px;
+  color: #92a096;
+}
+
+.cld-app .cld-results-count {
+  padding: 9px 13px;
+  border-radius: 20px;
+  background: #eaf7ee;
+  color: #64836e;
+  font-size: 12px;
+}
+
+.cld-app .cld-dashboard-search {
+  width: min(100%, 360px);
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  margin-bottom: 18px;
+  background: #fff;
+  border: 1px solid #e0ece4;
+  border-radius: 11px;
+  color: #8ca195;
+}
+
+.cld-app .cld-dashboard-search:focus-within {
+  border-color: #8bcfa8;
+  box-shadow: 0 0 0 3px rgba(139, 207, 168, .15);
+}
+
+.cld-app .cld-dashboard-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #253a30;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.cld-app .cld-jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cld-app .cld-job-card {
+  padding: 24px;
+  min-width: 0;
+  transition:
+    transform .2s,
+    box-shadow .2s,
+    border-color .2s;
+}
+
+.cld-app .cld-job-card:hover {
+  transform: translateY(-3px);
+  border-color: #bddfcb;
+  box-shadow: 0 12px 35px rgba(29, 57, 39, .08);
+}
+
+.cld-app .cld-job-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.cld-app .cld-company-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.cld-app .cld-match {
+  padding: 8px 10px;
+  border-radius: 30px;
+  background: #e9f8ee;
+  color: #449568;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cld-app .cld-job-card h3 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.cld-app .cld-company {
+  margin-bottom: 15px;
+  color: #89978c;
+  font-size: 12px;
+}
+
+.cld-app .cld-job-tags,
+.cld-app .cld-required-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cld-app .cld-job-tags span {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #eff4f1;
+  color: #5e7566;
+  font-size: 11px;
+}
+
+.cld-app .cld-required-skills {
+  margin-top: 17px;
+}
+
+.cld-app .cld-required-skills span {
+  color: #65788b;
+  font-size: 11px;
+}
+
+.cld-app .cld-required-skills span:not(:last-child)::after {
+  content: "·";
+  padding-left: 8px;
+  color: #b6c5ba;
+}
+
+.cld-app .cld-job-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #edf2ee;
+  color: #718477;
+  font-size: 11px;
+}
+
+/* SKILL PROGRESS */
+
+.cld-app .cld-skill-list {
+  margin-top: 27px;
+}
+
+.cld-app .cld-skill-item {
+  margin-bottom: 21px;
+}
+
+.cld-app .cld-skill-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.cld-app .cld-skill-meta strong {
+  color: #45566a;
+}
+
+.cld-app .cld-skill-meta span {
+  color: #4da570;
+  font-weight: 700;
+}
+
+/* ACTIVITIES */
+
+.cld-app .cld-activity-list {
+  margin-top: 24px;
+}
+
+.cld-app .cld-activity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf2ee;
+}
+
+.cld-app .cld-activity:last-child {
+  border-bottom: none;
+}
+
+.cld-app .cld-activity-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eaf7ef;
+  color: #509f72;
+}
+
+.cld-app .cld-activity strong,
+.cld-app .cld-activity small {
+  display: block;
+}
+
+.cld-app .cld-activity strong {
+  color: #334155;
+  font-size: 12px;
+}
+
+.cld-app .cld-activity small {
+  margin-top: 5px;
+  color: #92a096;
+  font-size: 11px;
+}
+
+.cld-app .cld-activity-check {
+  margin-left: auto;
+  color: #70bc8d;
+}
+
+/* EMPTY STATE AND FOOTER */
+
+.cld-app .cld-empty-state {
+  padding: 35px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e6eee9;
+  border-radius: 15px;
+  color: #738579;
+}
+
+.cld-app .cld-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 38px;
+  padding-top: 23px;
+  border-top: 1px solid #e7eee9;
+  color: #96a49a;
+  font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+  .cld-app .cld-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cld-app .cld-jobs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .cld-app .cld-main {
+    padding: 28px 26px;
+  }
+
+  .cld-app .cld-hero-art {
+    right: -65px;
+    opacity: .75;
+  }
+}
+
+@media (max-width: 800px) {
+  .cld-app .cld-overview-grid,
+  .cld-app .cld-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .cld-app .cld-main {
+    padding: 24px 17px;
+  }
+
+  .cld-app .cld-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cld-app .cld-premium-hero {
+    min-height: 225px;
+    padding: 25px;
+  }
+
+  .cld-app .cld-hero-copy {
+    width: 95%;
+  }
+
+  .cld-app .cld-hero-art {
+    right: -175px;
+    opacity: .23;
+  }
+
+  .cld-app .cld-readiness-body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .cld-app .cld-readiness-breakdown {
+    width: 100%;
+  }
+
+  .cld-app .cld-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cld-app .cld-panel {
+    padding: 20px;
+  }
+
+  .cld-app .cld-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .cld-app .cld-stats {
+    gap: 12px;
+  }
+
+  .cld-app .cld-stat-card {
+    padding: 15px;
+  }
+
+  .cld-app .cld-stat-card > strong {
+    font-size: 26px;
+  }
+
+  .cld-app .cld-deadline {
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .cld-app .cld-deadline strong {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cld-app .cld-hero-orbit-two,
+  .cld-app .cld-floating-skill {
+    animation: none;
+  }
+
+  .cld-app .cld-stat-card,
+  .cld-app .cld-job-card {
+    transition: none;
+  }
+}
