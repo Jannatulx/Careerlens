@@ -1,0 +1,74 @@
+/* CareerLens reusable sidebar — derived from the original My Skills design. */
+.clw-sidebar, .clw-sidebar * { box-sizing: border-box; }
+.clw-sidebar {
+  --clw-border: #e5eee9;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 70;
+  width: 251px;
+  max-width: 88vw;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px 22px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background: #fff;
+  border-right: 1px solid var(--clw-border);
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  transform: translateX(-105%);
+  visibility: hidden;
+  transition: transform .28s ease, visibility .28s ease;
+  box-shadow: 16px 0 44px rgba(20, 51, 29, .07);
+}
+.clw-sidebar.clw-sidebar-open { transform: translateX(0); visibility: visible; }
+.clw-sidebar a { text-decoration: none; }
+.clw-sidebar button { font: inherit; cursor: pointer; }
+.clw-sidebar a:focus-visible, .clw-sidebar button:focus-visible,
+.clw-menu-button:focus-visible { outline: 3px solid #78c69d; outline-offset: 3px; }
+.clw-brand { display: flex; align-items: center; gap: 10px; padding: 0 8px 30px; min-height: 72px; color: inherit; }
+.clw-brand-symbol { flex: none; width: 42px; height: 42px; display: grid; place-items: center; background: #f1f8f5; border: 1px solid #e7f3eb; border-radius: 12px; overflow: hidden; }
+.clw-brand-symbol img { width: 44px; height: 44px; object-fit: cover; display: block; }
+.clw-brand strong { display: block; color: #162c21; font-size: 20px; font-weight: 850; line-height: 1.1; letter-spacing: -.055em; }
+.clw-brand small { display: block; margin-top: 4px; color: #91a398; font-size: 10px; font-weight: 650; }
+.clw-caption { color: #9caea3; font-size: 10px; font-weight: 850; letter-spacing: .13em; padding: 0 17px; margin: 9px 0 14px; }
+.clw-nav { display: flex; flex-direction: column; gap: 4px; }
+.clw-link { display: flex; align-items: center; gap: 13px; flex: none; width: 100%; min-height: 44px; padding: 0 14px; text-align: left; border-radius: 10px; border: 1px solid transparent; background: transparent; font-size: 12.5px; font-weight: 680; white-space: nowrap; color: #7b8e83; transition: color .2s, background .2s, transform .2s; }
+.clw-link svg { flex: none; }
+.clw-link:hover { background: #f3f9f5; color: #2b7854; transform: translateX(2px); }
+.clw-link.clw-link-active { color: #1e8452; border-color: #dcf0e4; background: #e7f6ed; font-weight: 800; }
+.clw-link .clw-active-dot { width: 5px; height: 5px; border-radius: 50%; background: #35a779; margin-left: auto; }
+.clw-bottom { margin-top: auto; padding-top: 18px; }
+.clw-account-caption { color:#9caea3; font-size:10px; font-weight:850; letter-spacing:.13em; padding:0 17px; margin:9px 0 14px; }
+.clw-account-settings { display:flex; align-items:center; gap:13px; width:100%; min-height:50px; padding:0 17px; border:0; border-radius:12px; background:#f1f8f4; color:#287e56; text-align:left; font-size:12.5px; font-weight:680; cursor:pointer; }
+.clw-account-settings:hover { background:#e6f5ec; }
+.clw-account-settings svg { flex:none; }
+.clw-promo { position: relative; overflow: hidden; background: linear-gradient(143deg,#e9f8ed,#f4faf6); border: 1px solid #dcefe4; border-radius: 14px; padding: 17px 15px; margin-top: 23px; }
+.clw-promo:before { content: ''; position: absolute; width: 130px; height: 130px; border: 25px solid rgba(152,210,171,.17); border-radius: 50%; right: -75px; top: -56px; pointer-events: none; }
+.clw-promo-icon { width: 35px; height: 35px; display: grid; place-items: center; background: #d5efdf; color: #268b60; border-radius: 11px; margin-bottom: 14px; }
+.clw-promo strong { display: block; position: relative; color: #23523a; font-size: 12.5px; line-height: 1.4; }
+.clw-promo p { position: relative; color: #648775; font-size: 10.8px; line-height: 1.7; margin: 7px 0 12px; }
+.clw-promo>span { position: relative; display: flex; align-items: center; gap: 7px; color: #238358; font-size: 9.5px; font-weight: 850; }
+.clw-back-home { display: flex; gap: 18px; align-items: center; min-height: 50px; margin: 2px 0 0; padding: 0 17px; color: #173226; font-size: 12.5px; font-weight: 750; border-radius: 9px; }
+.clw-back-home:hover { background: #f3f9f5; color: #287e56; }
+.clw-notice { position: sticky; bottom: 8px; padding: 10px 12px; border-radius: 9px; background: #255e43; color: white; font-size: 11px; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,.12); }
+.clw-menu-button { flex: none; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; background: transparent; border-radius: 10px; color: #74867a; cursor: pointer; }
+.clw-menu-button:hover { background: #ecf6ef; color: #246f4e; }
+.clw-backdrop { display: none; }
+/* Override only page-shell offsets. Each page keeps its existing content CSS. */
+.skills-page .cl-appmain.clw-main-open,
+.sg-app .sg-app-main.clw-main-open,
+.op-page .op-main.clw-main-open { margin-left: 251px; transition: margin-left .28s ease; }
+.skills-page .cl-appmain.clw-main-closed,
+.sg-app .sg-app-main.clw-main-closed,
+.op-page .op-main.clw-main-closed { margin-left: 0; transition: margin-left .28s ease; }
+@media(max-width:900px) {
+  .clw-sidebar { width: 255px; }
+  .clw-backdrop { display: block; position: fixed; z-index: 69; inset: 0; border: 0; background: rgba(12,35,23,.38); cursor: pointer; }
+  .skills-page .cl-appmain.clw-main-open,
+  .sg-app .sg-app-main.clw-main-open,
+  .op-page .op-main.clw-main-open { margin-left: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .clw-sidebar, .clw-link,
+  .skills-page .cl-appmain, .sg-app .sg-app-main, .op-page .op-main { transition: none !important; }
+}
