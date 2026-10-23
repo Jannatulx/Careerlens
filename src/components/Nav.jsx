@@ -2,7 +2,7 @@ import {useState} from "react";
 import logo from "../assets/logo.png";
 import "./Nav.css";
 
-
+import { Link } from "react-router-dom";
 export default function Navbar(){
 
 
@@ -234,27 +234,13 @@ Features
 <div className="nav-actions">
 
 
-<button className="signin-btn">
+<Link to="/signin" className="signin-btn">
+  Sign In
+</Link>
 
-Sign In
-
-</button>
-
-
-
-
-<a
-
-href="#cta"
-
-className="signup-btn"
-
->
-
-Get Started →
-
-</a>
-
+<Link to="/signup" className="signup-btn">
+  Get Started →
+</Link>
 
 
 </div>
